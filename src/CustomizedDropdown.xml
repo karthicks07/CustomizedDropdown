@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget
+    id="mendix.customizeddropdown.CustomizedDropdown"
+    pluginWidget="true"
+    needsEntityContext="true"
+    offlineCapable="true"
+    supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+
+    <name>Customized Dropdown</name>
+    <description>A configurable dropdown widget with custom Mendix content, positioning options, and optional split-button functionality.</description>
+    <icon/>
+
+    <properties>
+
+        <propertyGroup caption="General">
+            <property key="buttonContent" type="widgets" required="false">
+                <caption>Button Content</caption>
+                <description>Content displayed inside the dropdown button.</description>
+            </property>
+            <property key="generalIsDropUp" type="boolean" defaultValue="false">
+                <caption>Drop up</caption>
+                <description>Display the dropdown menu above the button.</description>
+            </property>
+            <property key="generalIsRightAligned" type="boolean" defaultValue="false">
+                <caption>Right aligned menu</caption>
+                <description>Align the dropdown menu to the right edge of the button.</description>
+            </property>
+            <property key="generalStartOpen" type="boolean" defaultValue="false">
+                <caption>Start open</caption>
+                <description>Open the dropdown when the widget initializes.</description>
+            </property>
+            <property key="generalAutoClose" type="boolean" defaultValue="true">
+                <caption>Menu self-close</caption>
+                <description>Close the dropdown when the user clicks a non-interactive area inside its menu.</description>
+            </property>
+            <property key="renderMenuContentWhenClosed" type="boolean" defaultValue="true">
+                <caption>Render closed content</caption>
+                <description>Keep menu content mounted while the dropdown is closed.</description>
+            </property>
+        </propertyGroup>
+
+        <propertyGroup caption="Elements">
+            <property key="content" type="widgets" required="false">
+                <caption>Dropdown Container Content</caption>
+                <description>Mendix widgets displayed inside the dropdown menu.</description>
+            </property>
+        </propertyGroup>
+
+        <propertyGroup caption="Appearance">
+            <property key="appearanceButtonSize" type="enumeration" defaultValue="default">
+                <caption>Button size</caption>
+                <description>Select the size of the dropdown button.</description>
+                <enumerationValues>
+                    <enumerationValue key="lg">Large</enumerationValue>
+                    <enumerationValue key="default">Default</enumerationValue>
+                    <enumerationValue key="sm">Small</enumerationValue>
+                    <enumerationValue key="xs">Extra small</enumerationValue>
+                </enumerationValues>
+            </property>
+            <property key="appearanceButtonType" type="enumeration" defaultValue="default">
+                <caption>Button type</caption>
+                <description>Select the Bootstrap-style button appearance.</description>
+                <enumerationValues>
+                    <enumerationValue key="default">Default</enumerationValue>
+                    <enumerationValue key="primary">Primary</enumerationValue>
+                    <enumerationValue key="success">Success</enumerationValue>
+                    <enumerationValue key="info">Info</enumerationValue>
+                    <enumerationValue key="warning">Warning</enumerationValue>
+                    <enumerationValue key="danger">Danger</enumerationValue>
+                    <enumerationValue key="link">Link</enumerationValue>
+                </enumerationValues>
+            </property>
+        </propertyGroup>
+
+        <propertyGroup caption="Split button">
+            <property key="splitButtonSplitButtonActive" type="boolean" defaultValue="false" required="true">
+                <caption>Split button dropdown</caption>
+                <description>Display a separate action button next to the dropdown toggle.</description>
+            </property>
+            <property key="splitButtonSplitButtonClicked" type="action" required="false">
+                <caption>On click action</caption>
+                <description>Mendix action executed when the main split button is clicked.</description>
+            </property>
+        </propertyGroup>
+
+        <propertyGroup caption="Events">
+            <property key="onOpenAction" type="action" required="false">
+                <caption>On open</caption>
+                <description>Runs each time the dropdown opens. Use it to reset or refresh data.</description>
+            </property>
+            <property key="onCloseAction" type="action" required="false">
+                <caption>On close</caption>
+                <description>Runs each time the dropdown closes.</description>
+            </property>
+        </propertyGroup>
+
+    </properties>
+</widget>

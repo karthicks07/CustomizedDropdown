@@ -1,0 +1,81 @@
+/* Wrapper: shrinks to the button. It must never stretch across the page. */
+.customized-dropdown {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    max-width: 100%;
+}
+
+.customized-dropdown-trigger {
+    display: inline-flex;
+    align-items: stretch;
+}
+
+.customized-dropdown-single-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.customized-dropdown-caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 4px solid currentColor;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+.customized-dropdown--up .customized-dropdown-caret {
+    border-top: 0;
+    border-bottom: 4px solid currentColor;
+}
+
+/* Menu: closed by default, positioned relative to the wrapper only. */
+.customized-dropdown-menu {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    min-width: 160px;
+    width: max-content;
+    max-width: min(90vw, 480px);
+    padding: 8px;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+.customized-dropdown.is-open > .customized-dropdown-menu {
+    display: block;
+}
+
+.customized-dropdown-menu[hidden] {
+    display: none !important;
+}
+
+/* Vertical placement */
+.customized-dropdown--down > .customized-dropdown-menu {
+    top: 100%;
+    bottom: auto;
+    margin-top: 2px;
+}
+
+.customized-dropdown--up > .customized-dropdown-menu {
+    bottom: 100%;
+    top: auto;
+    margin-bottom: 2px;
+}
+
+/* Horizontal alignment */
+.customized-dropdown--left > .customized-dropdown-menu {
+    left: 0;
+    right: auto;
+}
+
+.customized-dropdown--right > .customized-dropdown-menu {
+    right: 0;
+    left: auto;
+}
